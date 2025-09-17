@@ -1,0 +1,1682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Application Form - Bweyale School of Nursing and Midwifery</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#0f766e',secondary:'#f59e0b'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9fafb;
+}
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: #0f766e;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.step-content {
+    display: none;
+}
+.step-content.active {
+    display: block;
+}
+.custom-file-upload {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+.custom-file-upload input[type="file"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.custom-radio {
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    user-select: none;
+}
+.custom-radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.radio-mark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border: 2px solid #0f766e;
+    border-radius: 50%;
+}
+.custom-radio input:checked ~ .radio-mark {
+    background-color: #fff;
+}
+.radio-mark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    top: 3px;
+    left: 3px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #0f766e;
+}
+.custom-radio input:checked ~ .radio-mark:after {
+    display: block;
+}
+.custom-checkbox {
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    user-select: none;
+}
+.custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border: 2px solid #0f766e;
+    border-radius: 4px;
+}
+.custom-checkbox input:checked ~ .checkmark {
+    background-color: #0f766e;
+}
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.custom-checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+.custom-checkbox .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+.custom-select {
+    position: relative;
+}
+.custom-select select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 2.5rem;
+}
+.custom-select:after {
+    content: "";
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #0f766e;
+    pointer-events: none;
+}
+.progress-bar {
+    height: 8px;
+    background-color: #e5e7eb;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.progress-bar-fill {
+    height: 100%;
+    background-color: #0f766e;
+    transition: width 0.3s ease;
+}
+.step-indicator {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #e5e7eb;
+    color: #6b7280;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+.step-indicator.active {
+    background-color: #0f766e;
+    color: white;
+}
+.step-indicator.completed {
+    background-color: #0f766e;
+    color: white;
+}
+.step-line {
+    flex: 1;
+    height: 2px;
+    background-color: #e5e7eb;
+}
+.step-line.active {
+    background-color: #0f766e;
+}
+.form-section {
+    transition: all 0.3s ease;
+}
+.form-section.fade-out {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+.form-section.fade-in {
+    opacity: 0;
+    transform: translateX(20px);
+}
+.payment-method {
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+.payment-method.selected {
+    border-color: #0f766e;
+    background-color: rgba(15, 118, 110, 0.05);
+}
+</style>
+</head>
+<body>
+<!-- Top Bar -->
+<div class="bg-primary text-white py-2">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+        <div class="flex items-center space-x-4">
+            <div class="flex items-center">
+                <div class="w-5 h-5 flex items-center justify-center">
+                    <i class="ri-phone-line"></i>
+                </div>
+                <span class="ml-1 text-sm">+256 782 456 789</span>
+            </div>
+            <div class="flex items-center">
+                <div class="w-5 h-5 flex items-center justify-center">
+                    <i class="ri-mail-line"></i>
+                </div>
+                <span class="ml-1 text-sm">info@bsnm.ac.ug</span>
+            </div>
+        </div>
+        <div class="flex space-x-3">
+            <a href="#" class="w-6 h-6 flex items-center justify-center bg-white bg-opacity-20 rounded-full hover:bg-opacity-30 transition">
+                <i class="ri-facebook-fill text-sm"></i>
+            </a>
+            <a href="#" class="w-6 h-6 flex items-center justify-center bg-white bg-opacity-20 rounded-full hover:bg-opacity-30 transition">
+                <i class="ri-twitter-fill text-sm"></i>
+            </a>
+            <a href="#" class="w-6 h-6 flex items-center justify-center bg-white bg-opacity-20 rounded-full hover:bg-opacity-30 transition">
+                <i class="ri-instagram-line text-sm"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Header & Navigation -->
+<header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+            <div class="flex items-center">
+                <div class="w-14 h-14 mr-3">
+                    <img src="https://static.readdy.ai/image/5b482ff326b89d7903505022f67bfc1e/42946f920724f527c6d857cfcdb03e0f.png" alt="BSNM Logo" class="w-full h-full object-contain">
+                </div>
+                <div>
+                    <h1 class="text-lg font-semibold text-gray-800">Bweyale School of Nursing</h1>
+                    <p class="text-sm text-gray-600">and Midwifery</p>
+                </div>
+            </div>
+            <nav class="hidden lg:flex items-center space-x-8">
+                <a href="./index.html" data-readdy="true" class="text-gray-700 hover:text-primary transition">Home</a>
+                <a href="#" class="text-gray-700 hover:text-primary transition">About Us</a>
+                <a href="#" class="text-gray-700 hover:text-primary transition">Programs</a>
+                <a href="#" class="text-gray-700 hover:text-primary transition">Facilities</a>
+                <a href="#" class="text-gray-700 hover:text-primary transition">Admissions</a>
+                <a href="#" class="text-gray-700 hover:text-primary transition">Contact</a>
+                <a href="#" class="bg-primary text-white px-5 py-2 !rounded-button hover:bg-primary/90 transition whitespace-nowrap">Apply Now</a>
+            </nav>
+            <div class="lg:hidden">
+                <button class="text-gray-700 focus:outline-none w-8 h-8 flex items-center justify-center">
+                    <i class="ri-menu-line text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Application Form Section -->
+<section class="py-10 md:py-16">
+    <div class="container mx-auto px-4">
+        <div class="flex mb-8">
+            <a href="https://readdy.ai/home/9e5d58d9-03cb-44f5-9a57-22124a5a3040/b7d53c53-87dc-470a-8ba6-97fa23c0afe6" data-readdy="true" class="flex items-center text-gray-600 hover:text-primary transition">
+                <div class="w-5 h-5 flex items-center justify-center">
+                    <i class="ri-arrow-left-line"></i>
+                </div>
+                <span class="ml-1">Back to Home</span>
+            </a>
+        </div>
+
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-10">
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Application for Admission</h1>
+                <p class="text-gray-700 max-w-2xl mx-auto">Complete the application form below to begin your journey at Bweyale School of Nursing and Midwifery. Please ensure all information provided is accurate and complete.</p>
+            </div>
+
+            <!-- Application Deadline Notice -->
+            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-8 rounded-md">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <div class="w-5 h-5 flex items-center justify-center text-yellow-400">
+                            <i class="ri-alarm-warning-line"></i>
+                        </div>
+                    </div>
+                    <div class="ml-3">
+                        <p class="text-sm text-yellow-700">
+                            <span class="font-medium">Application Deadline:</span> January Intake (October 30, 2025) | August Intake (May 30, 2025)
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progress Steps -->
+            <div class="mb-8">
+                <div class="flex items-center justify-between mb-2">
+                    <div class="flex items-center flex-1">
+                        <div class="step-indicator active" id="step-indicator-1">1</div>
+                        <div class="step-line" id="step-line-1"></div>
+                        <div class="step-indicator" id="step-indicator-2">2</div>
+                        <div class="step-line" id="step-line-2"></div>
+                        <div class="step-indicator" id="step-indicator-3">3</div>
+                        <div class="step-line" id="step-line-3"></div>
+                        <div class="step-indicator" id="step-indicator-4">4</div>
+                        <div class="step-line" id="step-line-4"></div>
+                        <div class="step-indicator" id="step-indicator-5">5</div>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-bar-fill" id="progress-bar-fill" style="width: 20%;"></div>
+                </div>
+                <div class="flex justify-between mt-2 text-xs text-gray-600">
+                    <span>Personal Info</span>
+                    <span>Academic</span>
+                    <span>Program</span>
+                    <span>Documents</span>
+                    <span>Payment</span>
+                </div>
+            </div>
+
+            <!-- Application Form -->
+            <form id="application-form" class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                <!-- Step 1: Personal Information -->
+                <div class="step-content active form-section" id="step-1">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-6">Personal Information</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="first-name" class="block text-sm font-medium text-gray-700 mb-1">First Name <span class="text-red-500">*</span></label>
+                            <input type="text" id="first-name" name="first_name" required class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary" placeholder="Enter your first name">
+                        </div>
+                        <div>
+                            <label for="last-name" class="block text-sm font-medium text-gray-700 mb-1">Last Name <span class="text-red-500">*</span></label>
+                            <input type="text" id="last-name" name="last_name" required class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary" placeholder="Enter your last name">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                        <div>
+                            <label for="date-of-birth" class="block text-sm font-medium text-gray-700 mb-1">Date of Birth <span class="text-red-500">*</span></label>
+                            <input type="date" id="date-of-birth" name="date_of_birth" required class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Gender <span class="text-red-500">*</span></label>
+                            <div class="flex space-x-6 mt-2">
+                                <label class="custom-radio">
+                                    <input type="radio" name="gender" value="male" required>
+                                    <span class="radio-mark"></span>
+                                    <span class="ml-2">Male</span>
+                                </label>
+                                <label class="custom-radio">
+                                    <input type="radio" name="gender" value="female">
+                                    <span class="radio-mark"></span>
+                                    <span class="ml-2">Female</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="nationality" class="block text-sm font-medium text-gray-700 mb-1">Nationality <span class="text-red-500">*</span></label>
+                            <div class="custom-select">
+                                <select id="nationality" name="nationality" required class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary">
+                                    <option value="">Select nationality</option>
+                                    <option value="Uganda">Uganda</option>
+                                    <option value="Kenya">Kenya</option>
+                                    <option value="Tanzania">Tanzania</option>
+                                    <option value="Rwanda">Rwanda</option>
+                                    <option value="South Sudan">South Sudan</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="national-id" class="block text-sm font-medium text-gray-700 mb-1">National ID/Passport Number <span class="text-red-500">*</span></label>
+                        <input type="text" id="national-id" name="national_id" required class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary" placeholder="Enter your National ID or Passport number">
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address <span class="text-red-500">*</span></label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary" placeholder="Enter your email address">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number <span class="text-red-500">*</span></label>
+                            <input type="tel" id="phone" name="phone" required class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary" placeholder="e.g. +256 782 456 789">
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="address" class="block text-sm font-medium text-gray-700 mb-1">Residential Address <span class="text-red-500">*</span></label>
+                        <textarea id="address" name="address" rows="3" required class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary" placeholder="Enter your full residential address"></textarea>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="emergency-contact" class="block text-sm font-medium text-gray-700 mb-1">Emergency Contact <span class="text-red-500">*</span></label>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <input type="text" id="emergency-contact-name" name="emergency_contact_name" required class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary" placeholder="Contact person name">
+                            <input type="tel" id="emergency-contact-phone" name="emergency_contact_phone" required class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary" placeholder="Contact person phone number">
+                        </div>
+                        <div class="mt-2">
+                            <input type="text" id="emergency-contact-relationship" name="emergency_contact_relationship" required class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary" placeholder="Relationship to applicant">
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Passport Photo <span class="text-red-500">*</span></label>
+                        <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
+                            <div class="custom-file-upload">
+                                <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                    <i class="ri-image-add-line text-gray-500 text-2xl"></i>
+                                </div>
+                                <p class="text-sm text-gray-700 mb-2">Upload a recent passport-sized photo</p>
+                                <p class="text-xs text-gray-500 mb-3">JPG, PNG or PDF, max 2MB</p>
+                                <button type="button" class="bg-white border border-gray-300 text-gray-700 px-4 py-2 !rounded-button hover:bg-gray-50 transition whitespace-nowrap">Browse Files</button>
+                                <input type="file" id="passport-photo" name="passport_photo" accept="image/jpeg,image/png,application/pdf" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end">
+                        <button type="button" id="next-step-1" class="bg-primary text-white px-6 py-3 !rounded-button hover:bg-primary/90 transition whitespace-nowrap">Next Step</button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Academic Qualifications -->
+                <div class="step-content form-section" id="step-2">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-6">Academic Qualifications</h2>
+                    
+                    <div class="mb-8">
+                        <h3 class="font-medium text-gray-900 mb-4">Uganda Certificate of Education (UCE) Results</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="uce-school" class="block text-sm font-medium text-gray-700 mb-1">School Name <span class="text-red-500">*</span></label>
+                                <input type="text" id="uce-school" name="uce_school" required class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary" placeholder="Enter school name">
+                            </div>
+                            <div>
+                                <label for="uce-year" class="block text-sm font-medium text-gray-700 mb-1">Year of Completion <span class="text-red-500">*</span></label>
+                                <div class="custom-select">
+                                    <select id="uce-year" name="uce_year" required class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary">
+                                        <option value="">Select year</option>
+                                        <option value="2025">2025</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2016">2016</option>
+                                        <option value="2015">2015</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                            <h4 class="font-medium text-gray-900 mb-3">Core Subject Grades <span class="text-red-500">*</span></h4>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                <div>
+                                    <label for="biology-grade" class="block text-sm font-medium text-gray-700 mb-1">Biology</label>
+                                    <div class="custom-select">
+                                        <select id="biology-grade" name="biology_grade" required class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary">
+                                            <option value="">Grade</option>
+                                            <option value="D1">D1</option>
+                                            <option value="D2">D2</option>
+                                            <option value="C3">C3</option>
+                                            <option value="C4">C4</option>
+                                            <option value="C5">C5</option>
+                                            <option value="C6">C6</option>
+                                            <option value="P7">P7</option>
+                                            <option value="P8">P8</option>
+                                            <option value="F9">F9</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="chemistry-grade" class="block text-sm font-medium text-gray-700 mb-1">Chemistry</label>
+                                    <div class="custom-select">
+                                        <select id="chemistry-grade" name="chemistry_grade" required class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary">
+                                            <option value="">Grade</option>
+                                            <option value="D1">D1</option>
+                                            <option value="D2">D2</option>
+                                            <option value="C3">C3</option>
+                                            <option value="C4">C4</option>
+                                            <option value="C5">C5</option>
+                                            <option value="C6">C6</option>
+                                            <option value="P7">P7</option>
+                                            <option value="P8">P8</option>
+                                            <option value="F9">F9</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="english-grade" class="block text-sm font-medium text-gray-700 mb-1">English</label>
+                                    <div class="custom-select">
+                                        <select id="english-grade" name="english_grade" required class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary">
+                                            <option value="">Grade</option>
+                                            <option value="D1">D1</option>
+                                            <option value="D2">D2</option>
+                                            <option value="C3">C3</option>
+                                            <option value="C4">C4</option>
+                                            <option value="C5">C5</option>
+                                            <option value="C6">C6</option>
+                                            <option value="P7">P7</option>
+                                            <option value="P8">P8</option>
+                                            <option value="F9">F9</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="math-grade" class="block text-sm font-medium text-gray-700 mb-1">Mathematics</label>
+                                    <div class="custom-select">
+                                        <select id="math-grade" name="math_grade" required class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary">
+                                            <option value="">Grade</option>
+                                            <option value="D1">D1</option>
+                                            <option value="D2">D2</option>
+                                            <option value="C3">C3</option>
+                                            <option value="C4">C4</option>
+                                            <option value="C5">C5</option>
+                                            <option value="C6">C6</option>
+                                            <option value="P7">P7</option>
+                                            <option value="P8">P8</option>
+                                            <option value="F9">F9</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h4 class="font-medium text-gray-900 mb-3">Other Subjects (Optional)</h4>
+                            <div id="other-subjects-container">
+                                <div class="grid grid-cols-2 gap-4 mb-3">
+                                    <input type="text" name="subject_name[]" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary" placeholder="Subject name">
+                                    <div class="custom-select">
+                                        <select name="subject_grade[]" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary">
+                                            <option value="">Grade</option>
+                                            <option value="D1">D1</option>
+                                            <option value="D2">D2</option>
+                                            <option value="C3">C3</option>
+                                            <option value="C4">C4</option>
+                                            <option value="C5">C5</option>
+                                            <option value="C6">C6</option>
+                                            <option value="P7">P7</option>
+                                            <option value="P8">P8</option>
+                                            <option value="F9">F9</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" id="add-subject" class="text-primary flex items-center text-sm hover:underline">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-add-line"></i>
+                                </div>
+                                <span>Add another subject</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h3 class="font-medium text-gray-900 mb-4">Additional Qualifications (if any)</h3>
+                        <div id="additional-qualifications-container">
+                            <div class="border border-gray-300 rounded-lg p-4 mb-4">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Qualification Type</label>
+                                        <input type="text" name="qualification_type[]" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary" placeholder="e.g. Certificate, Diploma">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Institution</label>
+                                        <input type="text" name="qualification_institution[]" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary" placeholder="Institution name">
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Year Completed</label>
+                                        <div class="custom-select">
+                                            <select name="qualification_year[]" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary">
+                                                <option value="">Select year</option>
+                                                <option value="2025">2025</option>
+                                                <option value="2024">2024</option>
+                                                <option value="2023">2023</option>
+                                                <option value="2022">2022</option>
+                                                <option value="2021">2021</option>
+                                                <option value="2020">2020</option>
+                                                <option value="2019">2019</option>
+                                                <option value="2018">2018</option>
+                                                <option value="2017">2017</option>
+                                                <option value="2016">2016</option>
+                                                <option value="2015">2015</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Grade/Result</label>
+                                        <input type="text" name="qualification_grade[]" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary" placeholder="Grade or result achieved">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" id="add-qualification" class="text-primary flex items-center text-sm hover:underline">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-add-line"></i>
+                            </div>
+                            <span>Add another qualification</span>
+                        </button>
+                    </div>
+
+                    <div class="flex justify-between">
+                        <button type="button" id="prev-step-2" class="bg-white border border-gray-300 text-gray-700 px-6 py-3 !rounded-button hover:bg-gray-50 transition whitespace-nowrap">Previous</button>
+                        <button type="button" id="next-step-2" class="bg-primary text-white px-6 py-3 !rounded-button hover:bg-primary/90 transition whitespace-nowrap">Next Step</button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Program Selection -->
+                <div class="step-content form-section" id="step-3">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-6">Program Selection</h2>
+                    
+                    <div class="mb-8">
+                        <label class="block text-sm font-medium text-gray-700 mb-3">Select Primary Program <span class="text-red-500">*</span></label>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <label class="border border-gray-300 rounded-lg p-4 cursor-pointer hover:border-primary hover:bg-primary/5 transition">
+                                <input type="radio" name="program" value="nursing" required class="hidden">
+                                <div class="flex items-start">
+                                    <div class="w-5 h-5 flex items-center justify-center mt-0.5">
+                                        <div class="w-5 h-5 border-2 border-gray-400 rounded-full flex items-center justify-center program-radio">
+                                            <div class="w-2.5 h-2.5 bg-primary rounded-full hidden program-radio-selected"></div>
+                                        </div>
+                                    </div>
+                                    <div class="ml-3">
+                                        <h3 class="font-medium text-gray-900">Certificate in Nursing</h3>
+                                        <p class="text-sm text-gray-600 mt-1">A 2.5-year program focusing on comprehensive patient care across various healthcare settings.</p>
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="border border-gray-300 rounded-lg p-4 cursor-pointer hover:border-primary hover:bg-primary/5 transition">
+                                <input type="radio" name="program" value="midwifery" required class="hidden">
+                                <div class="flex items-start">
+                                    <div class="w-5 h-5 flex items-center justify-center mt-0.5">
+                                        <div class="w-5 h-5 border-2 border-gray-400 rounded-full flex items-center justify-center program-radio">
+                                            <div class="w-2.5 h-2.5 bg-primary rounded-full hidden program-radio-selected"></div>
+                                        </div>
+                                    </div>
+                                    <div class="ml-3">
+                                        <h3 class="font-medium text-gray-900">Certificate in Midwifery</h3>
+                                        <p class="text-sm text-gray-600 mt-1">A 2.5-year program focusing on maternal and newborn care during pregnancy, labor, and postpartum.</p>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label for="intake-period" class="block text-sm font-medium text-gray-700 mb-1">Preferred Intake Period <span class="text-red-500">*</span></label>
+                        <div class="custom-select">
+                            <select id="intake-period" name="intake_period" required class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary">
+                                <option value="">Select intake period</option>
+                                <option value="January 2026">January 2026</option>
+                                <option value="August 2025">August 2025</option>
+                                <option value="January 2025">January 2025</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <label class="block text-sm font-medium text-gray-700 mb-3">Study Mode <span class="text-red-500">*</span></label>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <label class="custom-radio">
+                                <input type="radio" name="study_mode" value="full-time" required>
+                                <span class="radio-mark"></span>
+                                <span class="ml-2">Full-time</span>
+                            </label>
+                            <label class="custom-radio">
+                                <input type="radio" name="study_mode" value="part-time">
+                                <span class="radio-mark"></span>
+                                <span class="ml-2">Part-time</span>
+                            </label>
+                            <label class="custom-radio">
+                                <input type="radio" name="study_mode" value="weekend">
+                                <span class="radio-mark"></span>
+                                <span class="ml-2">Weekend</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <label class="block text-sm font-medium text-gray-700 mb-3">Accommodation Requirement <span class="text-red-500">*</span></label>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <label class="custom-radio">
+                                <input type="radio" name="accommodation" value="yes" required>
+                                <span class="radio-mark"></span>
+                                <span class="ml-2">Yes, I need school accommodation</span>
+                            </label>
+                            <label class="custom-radio">
+                                <input type="radio" name="accommodation" value="no">
+                                <span class="radio-mark"></span>
+                                <span class="ml-2">No, I will arrange my own accommodation</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-3">Secondary Program Choice (Optional)</label>
+                        <p class="text-sm text-gray-600 mb-3">If your first choice program is unavailable, would you like to be considered for the alternative program?</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <label class="custom-radio">
+                                <input type="radio" name="secondary_program" value="yes">
+                                <span class="radio-mark"></span>
+                                <span class="ml-2">Yes, consider me for the alternative program</span>
+                            </label>
+                            <label class="custom-radio">
+                                <input type="radio" name="secondary_program" value="no">
+                                <span class="radio-mark"></span>
+                                <span class="ml-2">No, I'm only interested in my first choice</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label for="hear-about-us" class="block text-sm font-medium text-gray-700 mb-1">How did you hear about us? <span class="text-red-500">*</span></label>
+                        <div class="custom-select">
+                            <select id="hear-about-us" name="hear_about_us" required class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary">
+                                <option value="">Please select</option>
+                                <option value="Website">School Website</option>
+                                <option value="Social Media">Social Media</option>
+                                <option value="Friend/Family">Friend or Family</option>
+                                <option value="School Visit">School Visit</option>
+                                <option value="Newspaper">Newspaper</option>
+                                <option value="Radio">Radio</option>
+                                <option value="Career Fair">Career Fair</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between">
+                        <button type="button" id="prev-step-3" class="bg-white border border-gray-300 text-gray-700 px-6 py-3 !rounded-button hover:bg-gray-50 transition whitespace-nowrap">Previous</button>
+                        <button type="button" id="next-step-3" class="bg-primary text-white px-6 py-3 !rounded-button hover:bg-primary/90 transition whitespace-nowrap">Next Step</button>
+                    </div>
+                </div>
+
+                <!-- Step 4: Document Uploads -->
+                <div class="step-content form-section" id="step-4">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-6">Document Uploads</h2>
+                    
+                    <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6 rounded-md">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="w-5 h-5 flex items-center justify-center text-blue-400">
+                                    <i class="ri-information-line"></i>
+                                </div>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm text-blue-700">
+                                    Please upload clear, legible scans or photos of the following documents. Acceptable formats include PDF, JPG, or PNG with a maximum file size of 2MB per document.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">UCE Certificate/Result Slip <span class="text-red-500">*</span></label>
+                            <div class="border-2 border-dashed border-gray-300 rounded-lg p-4">
+                                <div class="custom-file-upload">
+                                    <div class="flex items-center justify-center mb-3">
+                                        <div class="w-10 h-10 flex items-center justify-center">
+                                            <i class="ri-file-upload-line text-gray-400 text-2xl"></i>
+                                        </div>
+                                    </div>
+                                    <p class="text-sm text-gray-700 mb-2 text-center">Drag and drop your file here, or click to browse</p>
+                                    <p class="text-xs text-gray-500 mb-3 text-center">PDF, JPG or PNG (Max. 2MB)</p>
+                                    <div class="flex justify-center">
+                                        <button type="button" class="bg-white border border-gray-300 text-gray-700 px-4 py-2 !rounded-button hover:bg-gray-50 transition whitespace-nowrap">Upload File</button>
+                                    </div>
+                                    <input type="file" id="uce-certificate" name="uce_certificate" accept="image/jpeg,image/png,application/pdf" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">National ID/Passport <span class="text-red-500">*</span></label>
+                            <div class="border-2 border-dashed border-gray-300 rounded-lg p-4">
+                                <div class="custom-file-upload">
+                                    <div class="flex items-center justify-center mb-3">
+                                        <div class="w-10 h-10 flex items-center justify-center">
+                                            <i class="ri-file-upload-line text-gray-400 text-2xl"></i>
+                                        </div>
+                                    </div>
+                                    <p class="text-sm text-gray-700 mb-2 text-center">Drag and drop your file here, or click to browse</p>
+                                    <p class="text-xs text-gray-500 mb-3 text-center">PDF, JPG or PNG (Max. 2MB)</p>
+                                    <div class="flex justify-center">
+                                        <button type="button" class="bg-white border border-gray-300 text-gray-700 px-4 py-2 !rounded-button hover:bg-gray-50 transition whitespace-nowrap">Upload File</button>
+                                    </div>
+                                    <input type="file" id="national-id-upload" name="national_id_upload" accept="image/jpeg,image/png,application/pdf" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Medical Certificate <span class="text-red-500">*</span></label>
+                            <div class="border-2 border-dashed border-gray-300 rounded-lg p-4">
+                                <div class="custom-file-upload">
+                                    <div class="flex items-center justify-center mb-3">
+                                        <div class="w-10 h-10 flex items-center justify-center">
+                                            <i class="ri-file-upload-line text-gray-400 text-2xl"></i>
+                                        </div>
+                                    </div>
+                                    <p class="text-sm text-gray-700 mb-2 text-center">Drag and drop your file here, or click to browse</p>
+                                    <p class="text-xs text-gray-500 mb-3 text-center">PDF, JPG or PNG (Max. 2MB)</p>
+                                    <div class="flex justify-center">
+                                        <button type="button" class="bg-white border border-gray-300 text-gray-700 px-4 py-2 !rounded-button hover:bg-gray-50 transition whitespace-nowrap">Upload File</button>
+                                    </div>
+                                    <input type="file" id="medical-certificate" name="medical_certificate" accept="image/jpeg,image/png,application/pdf" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Recommendation Letter (Optional)</label>
+                            <div class="border-2 border-dashed border-gray-300 rounded-lg p-4">
+                                <div class="custom-file-upload">
+                                    <div class="flex items-center justify-center mb-3">
+                                        <div class="w-10 h-10 flex items-center justify-center">
+                                            <i class="ri-file-upload-line text-gray-400 text-2xl"></i>
+                                        </div>
+                                    </div>
+                                    <p class="text-sm text-gray-700 mb-2 text-center">Drag and drop your file here, or click to browse</p>
+                                    <p class="text-xs text-gray-500 mb-3 text-center">PDF, JPG or PNG (Max. 2MB)</p>
+                                    <div class="flex justify-center">
+                                        <button type="button" class="bg-white border border-gray-300 text-gray-700 px-4 py-2 !rounded-button hover:bg-gray-50 transition whitespace-nowrap">Upload File</button>
+                                    </div>
+                                    <input type="file" id="recommendation-letter" name="recommendation_letter" accept="image/jpeg,image/png,application/pdf">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Additional Documents (Optional)</label>
+                            <div class="border-2 border-dashed border-gray-300 rounded-lg p-4">
+                                <div class="custom-file-upload">
+                                    <div class="flex items-center justify-center mb-3">
+                                        <div class="w-10 h-10 flex items-center justify-center">
+                                            <i class="ri-file-upload-line text-gray-400 text-2xl"></i>
+                                        </div>
+                                    </div>
+                                    <p class="text-sm text-gray-700 mb-2 text-center">Drag and drop your file here, or click to browse</p>
+                                    <p class="text-xs text-gray-500 mb-3 text-center">PDF, JPG or PNG (Max. 2MB)</p>
+                                    <div class="flex justify-center">
+                                        <button type="button" class="bg-white border border-gray-300 text-gray-700 px-4 py-2 !rounded-button hover:bg-gray-50 transition whitespace-nowrap">Upload File</button>
+                                    </div>
+                                    <input type="file" id="additional-documents" name="additional_documents" accept="image/jpeg,image/png,application/pdf">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between mt-8">
+                        <button type="button" id="prev-step-4" class="bg-white border border-gray-300 text-gray-700 px-6 py-3 !rounded-button hover:bg-gray-50 transition whitespace-nowrap">Previous</button>
+                        <button type="button" id="next-step-4" class="bg-primary text-white px-6 py-3 !rounded-button hover:bg-primary/90 transition whitespace-nowrap">Next Step</button>
+                    </div>
+                </div>
+
+                <!-- Step 5: Payment Details -->
+                <div class="step-content form-section" id="step-5">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-6">Payment Details</h2>
+                    
+                    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6 rounded-md">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="w-5 h-5 flex items-center justify-center text-yellow-400">
+                                    <i class="ri-information-line"></i>
+                                </div>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm text-yellow-700">
+                                    <span class="font-medium">Application Fee:</span> UGX 50,000 (non-refundable)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h3 class="font-medium text-gray-900 mb-4">Select Payment Method</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="payment-method p-4 cursor-pointer" data-payment="mobile-money">
+                                <div class="flex items-center mb-3">
+                                    <div class="w-8 h-8 flex items-center justify-center">
+                                        <i class="ri-smartphone-line text-primary text-xl"></i>
+                                    </div>
+                                    <span class="ml-2 font-medium">Mobile Money</span>
+                                </div>
+                                <p class="text-sm text-gray-600">Pay using MTN Mobile Money or Airtel Money</p>
+                            </div>
+                            <div class="payment-method p-4 cursor-pointer" data-payment="bank-transfer">
+                                <div class="flex items-center mb-3">
+                                    <div class="w-8 h-8 flex items-center justify-center">
+                                        <i class="ri-bank-line text-primary text-xl"></i>
+                                    </div>
+                                    <span class="ml-2 font-medium">Bank Transfer</span>
+                                </div>
+                                <p class="text-sm text-gray-600">Pay via bank transfer to our account</p>
+                            </div>
+                            <div class="payment-method p-4 cursor-pointer" data-payment="in-person">
+                                <div class="flex items-center mb-3">
+                                    <div class="w-8 h-8 flex items-center justify-center">
+                                        <i class="ri-user-location-line text-primary text-xl"></i>
+                                    </div>
+                                    <span class="ml-2 font-medium">In-Person</span>
+                                </div>
+                                <p class="text-sm text-gray-600">Pay at our admissions office</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Mobile Money Payment Instructions -->
+                    <div class="payment-instructions" id="mobile-money-instructions" style="display: none;">
+                        <div class="bg-gray-50 p-6 rounded-lg mb-6">
+                            <h3 class="font-medium text-gray-900 mb-4">Mobile Money Payment Instructions</h3>
+                            <ol class="space-y-3 text-gray-700">
+                                <li class="flex">
+                                    <span class="font-medium mr-2">1.</span>
+                                    <span>Dial *165# (MTN) or *185# (Airtel)</span>
+                                </li>
+                                <li class="flex">
+                                    <span class="font-medium mr-2">2.</span>
+                                    <span>Select "Pay Bill" or "Make Payments"</span>
+                                </li>
+                                <li class="flex">
+                                    <span class="font-medium mr-2">3.</span>
+                                    <span>Enter Merchant Code: <span class="font-medium">BSNM2025</span></span>
+                                </li>
+                                <li class="flex">
+                                    <span class="font-medium mr-2">4.</span>
+                                    <span>Enter Reference Number: <span class="font-medium" id="reference-number">APP-2025-12345</span></span>
+                                </li>
+                                <li class="flex">
+                                    <span class="font-medium mr-2">5.</span>
+                                    <span>Enter Amount: <span class="font-medium">UGX 50,000</span></span>
+                                </li>
+                                <li class="flex">
+                                    <span class="font-medium mr-2">6.</span>
+                                    <span>Confirm payment with your PIN</span>
+                                </li>
+                                <li class="flex">
+                                    <span class="font-medium mr-2">7.</span>
+                                    <span>Upload the payment confirmation screenshot/receipt below</span>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <!-- Bank Transfer Payment Instructions -->
+                    <div class="payment-instructions" id="bank-transfer-instructions" style="display: none;">
+                        <div class="bg-gray-50 p-6 rounded-lg mb-6">
+                            <h3 class="font-medium text-gray-900 mb-4">Bank Transfer Payment Instructions</h3>
+                            <div class="space-y-3 text-gray-700 mb-4">
+                                <p class="font-medium">Bank Details:</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <p class="text-sm text-gray-600">Bank Name</p>
+                                        <p class="font-medium">Stanbic Bank Uganda</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-gray-600">Account Name</p>
+                                        <p class="font-medium">Bweyale School of Nursing and Midwifery</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-gray-600">Account Number</p>
+                                        <p class="font-medium">0123456789</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-gray-600">Branch</p>
+                                        <p class="font-medium">Kampala Main Branch</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-700 mb-3">
+                                <span class="font-medium">Important:</span> Use <span class="font-medium" id="bank-reference-number">APP-2025-12345</span> as the payment reference.
+                            </p>
+                            <p class="text-sm text-gray-700">
+                                After making the payment, please upload the bank deposit slip or transfer confirmation below.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- In-Person Payment Instructions -->
+                    <div class="payment-instructions" id="in-person-instructions" style="display: none;">
+                        <div class="bg-gray-50 p-6 rounded-lg mb-6">
+                            <h3 class="font-medium text-gray-900 mb-4">In-Person Payment Instructions</h3>
+                            <p class="text-gray-700 mb-4">
+                                You can make the payment at our admissions office during office hours:
+                            </p>
+                            <div class="space-y-2 text-gray-700 mb-4">
+                                <p><span class="font-medium">Address:</span> Bweyale Town Council, Along Gulu-Kampala Highway, Kiryandongo District, Uganda</p>
+                                <p><span class="font-medium">Office Hours:</span> Monday - Friday: 8:00 AM - 5:00 PM, Saturday: 9:00 AM - 1:00 PM</p>
+                            </div>
+                            <p class="text-sm text-gray-700">
+                                Please bring a printed copy of this application form and your identification document. You will receive a payment receipt which you should upload below.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6 payment-upload" style="display: none;">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Upload Payment Confirmation <span class="text-red-500">*</span></label>
+                        <div class="border-2 border-dashed border-gray-300 rounded-lg p-4">
+                            <div class="custom-file-upload">
+                                <div class="flex items-center justify-center mb-3">
+                                    <div class="w-10 h-10 flex items-center justify-center">
+                                        <i class="ri-file-upload-line text-gray-400 text-2xl"></i>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-gray-700 mb-2 text-center">Upload your payment confirmation receipt</p>
+                                <p class="text-xs text-gray-500 mb-3 text-center">PDF, JPG or PNG (Max. 2MB)</p>
+                                <div class="flex justify-center">
+                                    <button type="button" class="bg-white border border-gray-300 text-gray-700 px-4 py-2 !rounded-button hover:bg-gray-50 transition whitespace-nowrap">Upload Receipt</button>
+                                </div>
+                                <input type="file" id="payment-confirmation" name="payment_confirmation" accept="image/jpeg,image/png,application/pdf">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label class="custom-checkbox block mb-4">
+                            <input type="checkbox" name="terms_agreement" required>
+                            <span class="checkmark"></span>
+                            <span class="text-sm text-gray-700">I confirm that all information provided is accurate and complete. I understand that providing false information may result in the cancellation of my application or admission.</span>
+                        </label>
+                        <label class="custom-checkbox block">
+                            <input type="checkbox" name="privacy_policy" required>
+                            <span class="checkmark"></span>
+                            <span class="text-sm text-gray-700">I agree to the processing of my personal data in accordance with the <a href="#" class="text-primary hover:underline">privacy policy</a> of Bweyale School of Nursing and Midwifery.</span>
+                        </label>
+                    </div>
+
+                    <div class="flex justify-between">
+                        <button type="button" id="prev-step-5" class="bg-white border border-gray-300 text-gray-700 px-6 py-3 !rounded-button hover:bg-gray-50 transition whitespace-nowrap">Previous</button>
+                        <button type="submit" id="submit-application" class="bg-primary text-white px-6 py-3 !rounded-button hover:bg-primary/90 transition whitespace-nowrap">Submit Application</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Application Process Section -->
+<section class="py-12 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">What Happens Next?</h2>
+            
+            <div class="relative">
+                <div class="absolute left-8 top-0 bottom-0 w-1 bg-primary/20 hidden md:block"></div>
+                
+                <div class="space-y-8">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-16 flex-shrink-0 flex items-start justify-center mb-4 md:mb-0">
+                            <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-semibold z-10">1</div>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm md:ml-4 flex-1">
+                            <h3 class="font-semibold text-gray-900 mb-2">Application Review</h3>
+                            <p class="text-gray-700">Your application will be reviewed by our admissions committee. This process typically takes 2-3 weeks from the submission date.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-16 flex-shrink-0 flex items-start justify-center mb-4 md:mb-0">
+                            <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-semibold z-10">2</div>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm md:ml-4 flex-1">
+                            <h3 class="font-semibold text-gray-900 mb-2">Interview Invitation</h3>
+                            <p class="text-gray-700">Shortlisted candidates will receive an invitation for an interview via email and SMS. The interview may be conducted in-person or online.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-16 flex-shrink-0 flex items-start justify-center mb-4 md:mb-0">
+                            <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-semibold z-10">3</div>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm md:ml-4 flex-1">
+                            <h3 class="font-semibold text-gray-900 mb-2">Admission Decision</h3>
+                            <p class="text-gray-700">Following the interview, you will receive an admission decision within 1-2 weeks. Successful applicants will receive an official admission letter.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-16 flex-shrink-0 flex items-start justify-center mb-4 md:mb-0">
+                            <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-semibold z-10">4</div>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm md:ml-4 flex-1">
+                            <h3 class="font-semibold text-gray-900 mb-2">Acceptance & Registration</h3>
+                            <p class="text-gray-700">To secure your place, you'll need to accept the offer and pay the required tuition deposit. Registration details will be included in your admission letter.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-16 flex-shrink-0 flex items-start justify-center mb-4 md:mb-0">
+                            <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-semibold z-10">5</div>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm md:ml-4 flex-1">
+                            <h3 class="font-semibold text-gray-900 mb-2">Orientation & Start of Classes</h3>
+                            <p class="text-gray-700">Attend the orientation program to familiarize yourself with the school facilities, meet faculty members, and prepare for the start of your academic journey.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-10 bg-white p-6 rounded-lg shadow-sm">
+                <h3 class="font-semibold text-gray-900 mb-4">Need Help?</h3>
+                <p class="text-gray-700 mb-4">If you have any questions or need assistance with your application, please contact our admissions office:</p>
+                <div class="space-y-2">
+                    <div class="flex items-center">
+                        <div class="w-5 h-5 flex items-center justify-center text-primary">
+                            <i class="ri-phone-line"></i>
+                        </div>
+                        <span class="ml-2 text-gray-700">+256 782 456 789</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-5 h-5 flex items-center justify-center text-primary">
+                            <i class="ri-mail-line"></i>
+                        </div>
+                        <span class="ml-2 text-gray-700">admissions@bsnm.ac.ug</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-5 h-5 flex items-center justify-center text-primary">
+                            <i class="ri-time-line"></i>
+                        </div>
+                        <span class="ml-2 text-gray-700">Monday - Friday: 8:00 AM - 5:00 PM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            <div>
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 mr-3">
+                        <img src="https://static.readdy.ai/image/5b482ff326b89d7903505022f67bfc1e/42946f920724f527c6d857cfcdb03e0f.png" alt="BSNM Logo" class="w-full h-full object-contain">
+                    </div>
+                    <div>
+                        <h3 class="font-semibold">Bweyale School of</h3>
+                        <p class="text-sm text-gray-400">Nursing and Midwifery</p>
+                    </div>
+                </div>
+                <p class="text-gray-400 mb-4">Providing quality healthcare education to shape the future of medical professionals in Uganda since 2015.</p>
+                <div class="flex space-x-3">
+                    <a href="#" class="w-8 h-8 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition">
+                        <i class="ri-facebook-fill"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition">
+                        <i class="ri-twitter-fill"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition">
+                        <i class="ri-instagram-line"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition">
+                        <i class="ri-youtube-fill"></i>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="./index.html" data-readdy="true" class="text-gray-400 hover:text-white transition">Home</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">Programs</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">Facilities</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">Admissions</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Programs</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">Certificate in Nursing</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">Certificate in Midwifery</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">Short Courses</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">Continuing Education</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Contact Information</h3>
+                <ul class="space-y-3">
+                    <li class="flex items-start">
+                        <div class="w-5 h-5 flex items-center justify-center mt-0.5">
+                            <i class="ri-map-pin-line text-primary"></i>
+                        </div>
+                        <span class="ml-2 text-gray-400">Bweyale Town Council, Along Gulu-Kampala Highway, Kiryandongo District, Uganda</span>
+                    </li>
+                    <li class="flex items-center">
+                        <div class="w-5 h-5 flex items-center justify-center">
+                            <i class="ri-phone-line text-primary"></i>
+                        </div>
+                        <span class="ml-2 text-gray-400">+256 782 456 789</span>
+                    </li>
+                    <li class="flex items-center">
+                        <div class="w-5 h-5 flex items-center justify-center">
+                            <i class="ri-mail-line text-primary"></i>
+                        </div>
+                        <span class="ml-2 text-gray-400">info@bsnm.ac.ug</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <hr class="border-gray-800 mb-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2025 Bweyale School of Nursing and Midwifery. All rights reserved.</p>
+            <div class="flex space-x-4 text-sm text-gray-400">
+                <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition">Terms of Service</a>
+                <a href="#" class="hover:text-white transition">Sitemap</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Success Modal -->
+<div id="success-modal" class="fixed inset-0 bg-gray-900 bg-opacity-50 z-50 hidden flex items-center justify-center">
+    <div class="bg-white rounded-lg shadow-xl w-full max-w-md mx-4 transform transition-transform scale-95">
+        <div class="p-6">
+            <div class="text-center py-6">
+                <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="ri-check-line text-green-500 text-4xl"></i>
+                </div>
+                <h3 class="text-2xl font-semibold text-gray-900 mb-2">Application Submitted!</h3>
+                <p class="text-gray-700 mb-6">Thank you for applying to Bweyale School of Nursing and Midwifery. Your application has been successfully submitted.</p>
+                <div class="bg-gray-50 p-4 rounded-lg text-left mb-6">
+                    <p class="text-sm text-gray-700 mb-2"><span class="font-medium">Application ID:</span> <span id="application-id">APP-2025-12345</span></p>
+                    <p class="text-sm text-gray-700"><span class="font-medium">Submission Date:</span> May 12, 2025</p>
+                </div>
+                <p class="text-gray-700 text-sm mb-6">We will review your application and contact you within 2-3 weeks. Please check your email regularly for updates.</p>
+                <a href="https://readdy.ai/home/9e5d58d9-03cb-44f5-9a57-22124a5a3040/b7d53c53-87dc-470a-8ba6-97fa23c0afe6" data-readdy="true" class="bg-primary text-white px-6 py-3 !rounded-button hover:bg-primary/90 transition whitespace-nowrap inline-block">Return to Homepage</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Generate a random application ID
+    const appId = 'APP-2025-' + Math.floor(10000 + Math.random() * 90000);
+    document.getElementById('reference-number').textContent = appId;
+    document.getElementById('bank-reference-number').textContent = appId;
+    document.getElementById('application-id').textContent = appId;
+    
+    // Step navigation
+    const steps = ['step-1', 'step-2', 'step-3', 'step-4', 'step-5'];
+    let currentStep = 0;
+    
+    function updateProgressBar() {
+        const progressPercentage = ((currentStep + 1) / steps.length) * 100;
+        document.getElementById('progress-bar-fill').style.width = `${progressPercentage}%`;
+        
+        // Update step indicators
+        for (let i = 0; i < steps.length; i++) {
+            const indicator = document.getElementById(`step-indicator-${i+1}`);
+            const line = document.getElementById(`step-line-${i+1}`);
+            
+            if (i < currentStep) {
+                indicator.classList.add('completed');
+                indicator.classList.remove('active');
+                indicator.innerHTML = '<i class="ri-check-line"></i>';
+                if (line) line.classList.add('active');
+            } else if (i === currentStep) {
+                indicator.classList.add('active');
+                indicator.classList.remove('completed');
+                indicator.textContent = i + 1;
+                if (line) line.classList.remove('active');
+            } else {
+                indicator.classList.remove('active', 'completed');
+                indicator.textContent = i + 1;
+                if (line) line.classList.remove('active');
+            }
+        }
+    }
+    
+    function showStep(stepIndex) {
+        // Hide all steps
+        document.querySelectorAll('.step-content').forEach(step => {
+            step.classList.remove('active');
+        });
+        
+        // Show current step
+        document.getElementById(steps[stepIndex]).classList.add('active');
+        
+        // Update progress
+        currentStep = stepIndex;
+        updateProgressBar();
+    }
+    
+    // Next buttons
+    document.getElementById('next-step-1').addEventListener('click', function() {
+        // Basic validation for step 1
+        const requiredFields = ['first-name', 'last-name', 'date-of-birth', 'national-id', 'email', 'phone', 'address', 'emergency-contact-name', 'emergency-contact-phone', 'emergency-contact-relationship'];
+        let isValid = true;
+        
+        requiredFields.forEach(field => {
+            const input = document.getElementById(field);
+            if (!input.value.trim()) {
+                input.classList.add('border-red-500');
+                isValid = false;
+            } else {
+                input.classList.remove('border-red-500');
+            }
+        });
+        
+        // Check gender radio buttons
+        if (!document.querySelector('input[name="gender"]:checked')) {
+            isValid = false;
+            // Highlight gender section
+            document.querySelectorAll('.custom-radio .radio-mark').forEach(mark => {
+                mark.classList.add('border-red-500');
+            });
+        } else {
+            document.querySelectorAll('.custom-radio .radio-mark').forEach(mark => {
+                mark.classList.remove('border-red-500');
+            });
+        }
+        
+        if (isValid) {
+            showStep(1);
+        }
+    });
+    
+    document.getElementById('next-step-2').addEventListener('click', function() {
+        // Basic validation for step 2
+        const requiredFields = ['uce-school', 'biology-grade', 'chemistry-grade', 'english-grade', 'math-grade'];
+        let isValid = true;
+        
+        requiredFields.forEach(field => {
+            const input = document.getElementById(field);
+            if (!input.value.trim()) {
+                input.classList.add('border-red-500');
+                isValid = false;
+            } else {
+                input.classList.remove('border-red-500');
+            }
+        });
+        
+        if (isValid) {
+            showStep(2);
+        }
+    });
+    
+    document.getElementById('next-step-3').addEventListener('click', function() {
+        // Basic validation for step 3
+        let isValid = true;
+        
+        // Check program selection
+        if (!document.querySelector('input[name="program"]:checked')) {
+            isValid = false;
+            // Highlight program section
+            document.querySelectorAll('label[class*="border"]').forEach(label => {
+                label.classList.add('border-red-500');
+            });
+        } else {
+            document.querySelectorAll('label[class*="border"]').forEach(label => {
+                label.classList.remove('border-red-500');
+            });
+        }
+        
+        // Check intake period
+        const intakePeriod = document.getElementById('intake-period');
+        if (!intakePeriod.value) {
+            intakePeriod.classList.add('border-red-500');
+            isValid = false;
+        } else {
+            intakePeriod.classList.remove('border-red-500');
+        }
+        
+        // Check study mode
+        if (!document.querySelector('input[name="study_mode"]:checked')) {
+            isValid = false;
+            // Highlight study mode section
+            document.querySelectorAll('input[name="study_mode"]').forEach(input => {
+                input.parentElement.querySelector('.radio-mark').classList.add('border-red-500');
+            });
+        } else {
+            document.querySelectorAll('input[name="study_mode"]').forEach(input => {
+                input.parentElement.querySelector('.radio-mark').classList.remove('border-red-500');
+            });
+        }
+        
+        // Check accommodation
+        if (!document.querySelector('input[name="accommodation"]:checked')) {
+            isValid = false;
+            // Highlight accommodation section
+            document.querySelectorAll('input[name="accommodation"]').forEach(input => {
+                input.parentElement.querySelector('.radio-mark').classList.add('border-red-500');
+            });
+        } else {
+            document.querySelectorAll('input[name="accommodation"]').forEach(input => {
+                input.parentElement.querySelector('.radio-mark').classList.remove('border-red-500');
+            });
+        }
+        
+        if (isValid) {
+            showStep(3);
+        }
+    });
+    
+    document.getElementById('next-step-4').addEventListener('click', function() {
+        // Basic validation for step 4
+        // For simplicity, we'll just proceed to the next step
+        showStep(4);
+    });
+    
+    // Previous buttons
+    document.getElementById('prev-step-2').addEventListener('click', function() {
+        showStep(0);
+    });
+    
+    document.getElementById('prev-step-3').addEventListener('click', function() {
+        showStep(1);
+    });
+    
+    document.getElementById('prev-step-4').addEventListener('click', function() {
+        showStep(2);
+    });
+    
+    document.getElementById('prev-step-5').addEventListener('click', function() {
+        showStep(3);
+    });
+    
+    // Add subject button
+    document.getElementById('add-subject').addEventListener('click', function() {
+        const container = document.getElementById('other-subjects-container');
+        const newSubject = document.createElement('div');
+        newSubject.className = 'grid grid-cols-2 gap-4 mb-3';
+        newSubject.innerHTML = `
+            <input type="text" name="subject_name[]" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary" placeholder="Subject name">
+            <div class="custom-select">
+                <select name="subject_grade[]" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary">
+                    <option value="">Grade</option>
+                    <option value="D1">D1</option>
+                    <option value="D2">D2</option>
+                    <option value="C3">C3</option>
+                    <option value="C4">C4</option>
+                    <option value="C5">C5</option>
+                    <option value="C6">C6</option>
+                    <option value="P7">P7</option>
+                    <option value="P8">P8</option>
+                    <option value="F9">F9</option>
+                </select>
+            </div>
+        `;
+        container.appendChild(newSubject);
+    });
+    
+    // Add qualification button
+    document.getElementById('add-qualification').addEventListener('click', function() {
+        const container = document.getElementById('additional-qualifications-container');
+        const newQualification = document.createElement('div');
+        newQualification.className = 'border border-gray-300 rounded-lg p-4 mb-4';
+        newQualification.innerHTML = `
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Qualification Type</label>
+                    <input type="text" name="qualification_type[]" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary" placeholder="e.g. Certificate, Diploma">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Institution</label>
+                    <input type="text" name="qualification_institution[]" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary" placeholder="Institution name">
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Year Completed</label>
+                    <div class="custom-select">
+                        <select name="qualification_year[]" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary">
+                            <option value="">Select year</option>
+                            <option value="2025">2025</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                            <option value="2019">2019</option>
+                            <option value="2018">2018</option>
+                            <option value="2017">2017</option>
+                            <option value="2016">2016</option>
+                            <option value="2015">2015</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Grade/Result</label>
+                    <input type="text" name="qualification_grade[]" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary" placeholder="Grade or result achieved">
+                </div>
+            </div>
+        `;
+        container.appendChild(newQualification);
+    });
+    
+    // Program selection radio buttons
+    const programRadios = document.querySelectorAll('input[name="program"]');
+    programRadios.forEach(radio => {
+        radio.addEventListener('change', function() {
+            // Reset all labels
+            document.querySelectorAll('label[class*="border"]').forEach(label => {
+                label.classList.remove('border-primary', 'bg-primary/5');
+            });
+            
+            // Highlight selected label
+            if (this.checked) {
+                this.closest('label').classList.add('border-primary', 'bg-primary/5');
+                
+                // Show the radio dot
+                this.closest('label').querySelector('.program-radio-selected').classList.remove('hidden');
+                
+                // Hide other radio dots
+                document.querySelectorAll('.program-radio-selected').forEach(dot => {
+                    if (dot !== this.closest('label').querySelector('.program-radio-selected')) {
+                        dot.classList.add('hidden');
+                    }
+                });
+            }
+        });
+    });
+    
+    // Payment method selection
+    const paymentMethods = document.querySelectorAll('.payment-method');
+    paymentMethods.forEach(method => {
+        method.addEventListener('click', function() {
+            // Reset all payment methods
+            paymentMethods.forEach(m => {
+                m.classList.remove('selected');
+            });
+            
+            // Hide all payment instructions
+            document.querySelectorAll('.payment-instructions').forEach(instr => {
+                instr.style.display = 'none';
+            });
+            
+            // Hide payment upload
+            document.querySelector('.payment-upload').style.display = 'none';
+            
+            // Select clicked method
+            this.classList.add('selected');
+            
+            // Show corresponding instructions
+            const paymentType = this.getAttribute('data-payment');
+            document.getElementById(`${paymentType}-instructions`).style.display = 'block';
+            
+            // Show payment upload section
+            document.querySelector('.payment-upload').style.display = 'block';
+        });
+    });
+    
+    // Form submission
+    document.getElementById('application-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Basic validation for step 5
+        let isValid = true;
+        
+        // Check if payment method is selected
+        if (!document.querySelector('.payment-method.selected')) {
+            isValid = false;
+            // Highlight payment methods
+            document.querySelectorAll('.payment-method').forEach(method => {
+                method.classList.add('border-red-500');
+            });
+        } else {
+            document.querySelectorAll('.payment-method').forEach(method => {
+                method.classList.remove('border-red-500');
+            });
+        }
+        
+        // Check terms agreement
+        if (!document.querySelector('input[name="terms_agreement"]:checked')) {
+            isValid = false;
+            document.querySelector('input[name="terms_agreement"]').parentElement.querySelector('.checkmark').classList.add('border-red-500');
+        } else {
+            document.querySelector('input[name="terms_agreement"]').parentElement.querySelector('.checkmark').classList.remove('border-red-500');
+        }
+        
+        // Check privacy policy
+        if (!document.querySelector('input[name="privacy_policy"]:checked')) {
+            isValid = false;
+            document.querySelector('input[name="privacy_policy"]').parentElement.querySelector('.checkmark').classList.add('border-red-500');
+        } else {
+            document.querySelector('input[name="privacy_policy"]').parentElement.querySelector('.checkmark').classList.remove('border-red-500');
+        }
+        
+        if (isValid) {
+            // Show success modal
+            const successModal = document.getElementById('success-modal');
+            successModal.classList.remove('hidden');
+            setTimeout(() => {
+                successModal.querySelector('.transform').classList.add('scale-100');
+                successModal.querySelector('.transform').classList.remove('scale-95');
+            }, 10);
+        }
+    });
+    
+    // Mobile menu toggle
+    const menuButton = document.querySelector('.ri-menu-line').parentElement;
+    const mobileMenu = document.createElement('div');
+    mobileMenu.className = 'lg:hidden fixed inset-0 bg-gray-900 bg-opacity-50 z-50 hidden';
+    mobileMenu.innerHTML = `
+        <div class="bg-white h-full w-64 p-6 transform transition-transform -translate-x-full">
+            <div class="flex justify-between items-center mb-6">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 mr-2">
+                        <img src="https://static.readdy.ai/image/5b482ff326b89d7903505022f67bfc1e/42946f920724f527c6d857cfcdb03e0f.png" alt="BSNM Logo" class="w-full h-full object-contain">
+                    </div>
+                    <span class="text-sm font-semibold">Bweyale School</span>
+                </div>
+                <button class="text-gray-700 focus:outline-none close-menu">
+                    <i class="ri-close-line text-2xl"></i>
+                </button>
+            </div>
+            <nav class="flex flex-col space-y-4">
+                <a href="https://readdy.ai/home/9e5d58d9-03cb-44f5-9a57-22124a5a3040/b7d53c53-87dc-470a-8ba6-97fa23c0afe6" data-readdy="true" class="text-gray-700 hover:text-primary transition">Home</a>
+                <a href="#" class="text-gray-700 hover:text-primary transition">About Us</a>
+                <a href="#" class="text-gray-700 hover:text-primary transition">Programs</a>
+                <a href="#" class="text-gray-700 hover:text-primary transition">Facilities</a>
+                <a href="#" class="text-gray-700 hover:text-primary transition">Admissions</a>
+                <a href="#" class="text-gray-700 hover:text-primary transition">Contact</a>
+                <a href="#" class="bg-primary text-white px-4 py-2 !rounded-button hover:bg-primary/90 transition text-center mt-4">Apply Now</a>
+            </nav>
+        </div>
+    `;
+    document.body.appendChild(mobileMenu);
+    
+    menuButton.addEventListener('click', function() {
+        mobileMenu.classList.remove('hidden');
+        mobileMenu.querySelector('div').classList.add('translate-x-0');
+        mobileMenu.querySelector('div').classList.remove('-translate-x-full');
+        document.body.classList.add('overflow-hidden');
+    });
+    
+    mobileMenu.querySelector('.close-menu').addEventListener('click', function() {
+        mobileMenu.querySelector('div').classList.remove('translate-x-0');
+        mobileMenu.querySelector('div').classList.add('-translate-x-full');
+        setTimeout(() => {
+            mobileMenu.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }, 300);
+    });
+    
+    // Close mobile menu when clicking on a link
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+            mobileMenu.querySelector('div').classList.remove('translate-x-0');
+            mobileMenu.querySelector('div').classList.add('-translate-x-full');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+            }, 300);
+        });
+    });
+});
+</script>
+</body>
+</html>

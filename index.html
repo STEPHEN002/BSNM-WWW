@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bweyale School of Nursing and Midwifery</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#0f766e',secondary:'#f59e0b'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Poppins', sans-serif;
+}
+.hero-section {
+position: relative;
+background-size: cover;
+background-position: center;
+}
+.hero-overlay {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
+}
+input:focus, textarea:focus {
+outline: none;
+border-color: #0f766e;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+.custom-checkbox {
+position: relative;
+padding-left: 28px;
+cursor: pointer;
+user-select: none;
+}
+.custom-checkbox input {
+position: absolute;
+opacity: 0;
+cursor: pointer;
+height: 0;
+width: 0;
+}
+.checkmark {
+position: absolute;
+top: 0;
+left: 0;
+height: 20px;
+width: 20px;
+background-color: #fff;
+border: 2px solid #0f766e;
+border-radius: 4px;
+}
+.custom-checkbox input:checked ~ .checkmark {
+background-color: #0f766e;
+}
+.checkmark:after {
+content: "";
+position: absolute;
+display: none;
+}
+.custom-checkbox input:checked ~ .checkmark:after {
+display: block;
+}
+.custom-checkbox .checkmark:after {
+left: 6px;
+top: 2px;
+width: 5px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.program-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.facility-card:hover {
+transform: scale(1.03);
+}
+.facility-card img {
+transition: all 0.5s ease;
+}
+.facility-card:hover img {
+transform: scale(1.1);
+}
+</style>
+</head>
+<body class="bg-gray-50">
+<!-- Top Bar -->
+<div class="bg-primary text-white py-2">
+<div class="container mx-auto px-4 flex justify-between items-center">
+<div class="flex items-center space-x-4">
+<div class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-phone-line"></i>
+</div>
+<span class="ml-1 text-sm">+256 782 456 789</span>
+</div>
+<div class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-mail-line"></i>
+</div>
+<span class="ml-1 text-sm">info@bsnm.ac.ug</span>
+</div>
+</div>
+<div class="flex space-x-3">
+<a href="#" class="w-6 h-6 flex items-center justify-center bg-white bg-opacity-20 rounded-full hover:bg-opacity-30 transition">
+<i class="ri-facebook-fill text-sm"></i>
+</a>
+<a href="#" class="w-6 h-6 flex items-center justify-center bg-white bg-opacity-20 rounded-full hover:bg-opacity-30 transition">
+<i class="ri-twitter-fill text-sm"></i>
+</a>
+<a href="#" class="w-6 h-6 flex items-center justify-center bg-white bg-opacity-20 rounded-full hover:bg-opacity-30 transition">
+<i class="ri-instagram-line text-sm"></i>
+</a>
+</div>
+</div>
+</div>
+<!-- Header & Navigation -->
+<header class="bg-white shadow-sm sticky top-0 z-50">
+<div class="container mx-auto px-4">
+<div class="flex justify-between items-center py-4">
+<div class="flex items-center">
+<div class="w-14 h-14 mr-3">
+<img src="https://static.readdy.ai/image/5b482ff326b89d7903505022f67bfc1e/42946f920724f527c6d857cfcdb03e0f.png" alt="BSNM Logo" class="w-full h-full object-contain">
+</div>
+<div>
+<h1 class="text-lg font-semibold text-gray-800">Bweyale School of Nursing</h1>
+<p class="text-sm text-gray-600">and Midwifery</p>
+</div>
+</div>
+<nav class="hidden lg:flex items-center space-x-8">
+<a href="#" class="text-primary font-medium">Home</a>
+<a href="#about" class="text-gray-700 hover:text-primary transition">About Us</a>
+<a href="#programs" class="text-gray-700 hover:text-primary transition">Programs</a>
+<a href="#facilities" class="text-gray-700 hover:text-primary transition">Facilities</a>
+<a href="./admission.html" class="text-gray-700 hover:text-primary transition">Admissions</a>
+<a href="#contact" class="text-gray-700 hover:text-primary transition">Contact</a>
+<a href="https://readdy.ai/home/9e5d58d9-03cb-44f5-9a57-22124a5a3040/5874f331-9fd6-4ab6-9d89-74e30bf35f8e" data-readdy="true" class="bg-primary text-white px-5 py-2 !rounded-button hover:bg-primary/90 transition whitespace-nowrap">Apply Now</a>
+</nav>
+<div class="lg:hidden">
+<button class="text-gray-700 focus:outline-none w-8 h-8 flex items-center justify-center">
+<i class="ri-menu-line text-2xl"></i>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="hero-section" style="background-image: url('https://readdy.ai/api/search-image?query=A%20professional%20and%20inspiring%20scene%20of%20a%20modern%20nursing%20school%20campus%20with%20students%20in%20medical%20uniforms%20walking%20on%20pathways%2C%20surrounded%20by%20well-maintained%20buildings%20and%20greenery.%20The%20image%20should%20have%20a%20clean%2C%20bright%20atmosphere%20with%20a%20soft%20gradient%20from%20white%20on%20the%20left%20side%20to%20a%20full%20detailed%20view%20on%20the%20right%20side%2C%20perfect%20for%20a%20website%20hero%20section%20background&width=1600&height=800&seq=1&orientation=landscape');">
+<div class="hero-overlay"></div>
+<div class="container mx-auto px-4 py-20 relative">
+<div class="w-full md:w-1/2 z-10 relative">
+<span class="bg-primary/10 text-primary px-4 py-1 rounded-full text-sm font-medium">Established 2015</span>
+<h1 class="text-4xl md:text-5xl font-bold text-gray-900 mt-4 leading-tight">Excellence in Nursing & Midwifery Education</h1>
+<p class="text-gray-700 mt-4 text-lg">Providing quality healthcare education to shape the future of medical professionals in Uganda. Join us on a journey of learning, compassion, and excellence.</p>
+<div class="mt-8 flex flex-wrap gap-4">
+<a href="#programs" class="bg-primary text-white px-6 py-3 !rounded-button hover:bg-primary/90 transition whitespace-nowrap">Explore Programs</a>
+<a href="#contact" class="bg-white border border-gray-300 text-gray-700 px-6 py-3 !rounded-button hover:bg-gray-50 transition whitespace-nowrap">Contact Us</a>
+</div>
+<div class="mt-8 flex items-center">
+<div class="flex -space-x-2">
+<img src="https://readdy.ai/api/search-image?query=Professional%20portrait%20of%20a%20female%20African%20nurse%20in%20uniform%2C%20looking%20confident%20and%20compassionate%2C%20with%20a%20clean%20white%20background&width=100&height=100&seq=2&orientation=squarish" alt="Student" class="w-10 h-10 rounded-full border-2 border-white object-cover object-top">
+<img src="https://readdy.ai/api/search-image?query=Professional%20portrait%20of%20a%20male%20African%20healthcare%20worker%20in%20uniform%2C%20looking%20confident%20and%20compassionate%2C%20with%20a%20clean%20white%20background&width=100&height=100&seq=3&orientation=squarish" alt="Student" class="w-10 h-10 rounded-full border-2 border-white object-cover object-top">
+<img src="https://readdy.ai/api/search-image?query=Professional%20portrait%20of%20a%20female%20African%20midwife%20in%20uniform%2C%20looking%20confident%20and%20compassionate%2C%20with%20a%20clean%20white%20background&width=100&height=100&seq=4&orientation=squarish" alt="Student" class="w-10 h-10 rounded-full border-2 border-white object-cover object-top">
+</div>
+<div class="ml-4">
+<p class="text-sm text-gray-600">Join over <span class="font-semibold text-primary">500+</span> students</p>
+<div class="flex items-center mt-1">
+<div class="flex text-yellow-400">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-half-fill"></i>
+</div>
+<span class="ml-1 text-sm text-gray-600">4.8/5 student satisfaction</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section id="about" class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="flex flex-col md:flex-row gap-12 items-center">
+<div class="md:w-1/2">
+<img src="https://readdy.ai/api/search-image?query=A%20modern%20nursing%20school%20building%20in%20Uganda%20with%20students%20in%20uniforms%20walking%20outside%2C%20surrounded%20by%20greenery%20and%20a%20well-maintained%20campus.%20The%20building%20should%20look%20professional%20and%20educational%20with%20clean%20architecture&width=600&height=400&seq=5&orientation=landscape" alt="Bweyale School of Nursing and Midwifery" class="rounded-lg shadow-lg w-full h-auto object-cover object-top">
+</div>
+<div class="md:w-1/2">
+<h2 class="text-3xl font-bold text-gray-900 mb-6">About Bweyale School of Nursing and Midwifery</h2>
+<p class="text-gray-700 mb-4">Established in 2015, Bweyale School of Nursing and Midwifery (BSNM) is a premier health training institution located along Gulu - Kampala Highway within Bweyale Town council, Kiryandongo District.</p>
+<p class="text-gray-700 mb-6">Our institution is dedicated to training competent healthcare professionals through comprehensive programs certified by the Uganda Health Professional Authority Board (UHPAB).</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+<div class="bg-gray-50 p-4 rounded-lg">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+<i class="ri-eye-line text-primary"></i>
+</div>
+<h3 class="font-semibold text-gray-900 mb-2">Our Vision</h3>
+<p class="text-gray-700 text-sm">To be the leading center of excellence in nursing and midwifery education in Uganda.</p>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+<i class="ri-flag-line text-primary"></i>
+</div>
+<h3 class="font-semibold text-gray-900 mb-2">Our Mission</h3>
+<p class="text-gray-700 text-sm">To produce competent, compassionate, and ethical healthcare professionals who will transform healthcare delivery in Uganda.</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-4">
+<div class="flex items-center">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3">
+<i class="ri-graduation-cap-line text-primary"></i>
+</div>
+<span class="text-gray-700">UHPAB Certified</span>
+</div>
+<div class="flex items-center">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3">
+<i class="ri-calendar-line text-primary"></i>
+</div>
+<span class="text-gray-700">Est. 2015</span>
+</div>
+<div class="flex items-center">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3">
+<i class="ri-user-star-line text-primary"></i>
+</div>
+<span class="text-gray-700">Experienced Faculty</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Programs Section -->
+<section id="programs" class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">Our Programs</h2>
+<p class="text-gray-700 max-w-2xl mx-auto">We offer comprehensive healthcare education programs designed to equip students with the knowledge and skills needed for successful careers in nursing and midwifery.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Nursing Program -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden program-card transition-all duration-300">
+<div class="relative h-48">
+<img src="https://readdy.ai/api/search-image?query=A%20professional%20scene%20of%20nursing%20students%20in%20a%20clinical%20setting%2C%20practicing%20patient%20care%20with%20medical%20equipment.%20The%20image%20should%20show%20students%20in%20nursing%20uniforms%20working%20with%20mannequins%20or%20simulated%20patients%20in%20a%20modern%20skills%20laboratory%20with%20medical%20equipment%20visible&width=600&height=400&seq=6&orientation=landscape" alt="Nursing Program" class="w-full h-full object-cover object-top">
+<div class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">2.5 Years</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-gray-900 mb-2">Certificate in Nursing</h3>
+<p class="text-gray-700 mb-4">Our nursing program prepares students to provide comprehensive patient care across various healthcare settings. Students gain both theoretical knowledge and practical skills through hands-on training.</p>
+<div class="mb-6">
+<h4 class="font-semibold text-gray-900 mb-2">Program Highlights:</h4>
+<ul class="space-y-2">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5">
+<i class="ri-check-line text-primary"></i>
+</div>
+<span class="ml-2 text-gray-700">Comprehensive clinical practice</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5">
+<i class="ri-check-line text-primary"></i>
+</div>
+<span class="ml-2 text-gray-700">Patient assessment and care planning</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5">
+<i class="ri-check-line text-primary"></i>
+</div>
+<span class="ml-2 text-gray-700">Medical-surgical nursing</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5">
+<i class="ri-check-line text-primary"></i>
+</div>
+<span class="ml-2 text-gray-700">Community health nursing</span>
+</li>
+</ul>
+</div>
+<div class="flex justify-between items-center">
+<div>
+<span class="text-sm text-gray-500">Certification:</span>
+<p class="font-medium text-gray-900">UHPAB Certified</p>
+</div>
+<a href="#" class="bg-primary text-white px-4 py-2 !rounded-button hover:bg-primary/90 transition whitespace-nowrap">Program Details</a>
+</div>
+</div>
+</div>
+<!-- Midwifery Program -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden program-card transition-all duration-300">
+<div class="relative h-48">
+<img src="https://readdy.ai/api/search-image?query=A%20professional%20scene%20of%20midwifery%20students%20learning%20maternal%20care%20in%20a%20clinical%20setting.%20The%20image%20should%20show%20students%20in%20midwifery%20uniforms%20working%20with%20pregnant%20women%20models%20or%20in%20a%20simulated%20birthing%20environment%20with%20medical%20equipment%20visible&width=600&height=400&seq=7&orientation=landscape" alt="Midwifery Program" class="w-full h-full object-cover object-top">
+<div class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">2.5 Years</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-gray-900 mb-2">Certificate in Midwifery</h3>
+<p class="text-gray-700 mb-4">Our midwifery program focuses on maternal and newborn care, preparing students to provide essential healthcare services to women during pregnancy, labor, and the postpartum period.</p>
+<div class="mb-6">
+<h4 class="font-semibold text-gray-900 mb-2">Program Highlights:</h4>
+<ul class="space-y-2">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5">
+<i class="ri-check-line text-primary"></i>
+</div>
+<span class="ml-2 text-gray-700">Antenatal and postnatal care</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5">
+<i class="ri-check-line text-primary"></i>
+</div>
+<span class="ml-2 text-gray-700">Labor and delivery management</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5">
+<i class="ri-check-line text-primary"></i>
+</div>
+<span class="ml-2 text-gray-700">Newborn care and assessment</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5">
+<i class="ri-check-line text-primary"></i>
+</div>
+<span class="ml-2 text-gray-700">Family planning and reproductive health</span>
+</li>
+</ul>
+</div>
+<div class="flex justify-between items-center">
+<div>
+<span class="text-sm text-gray-500">Certification:</span>
+<p class="font-medium text-gray-900">UHPAB Certified</p>
+</div>
+<a href="#" class="bg-primary text-white px-4 py-2 !rounded-button hover:bg-primary/90 transition whitespace-nowrap">Program Details</a>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-12 text-center">
+<a href="#" class="inline-flex items-center text-primary font-medium hover:underline">
+View admission requirements
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+</div>
+</section>
+<!-- Facilities Section -->
+<section id="facilities" class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">Our Facilities</h2>
+<p class="text-gray-700 max-w-2xl mx-auto">We provide state-of-the-art facilities to ensure our students receive the best possible education and training experience.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Skills Laboratory -->
+<div class="bg-white rounded-lg shadow-sm overflow-hidden facility-card transition-all duration-300">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20modern%20nursing%20skills%20laboratory%20with%20medical%20mannequins%2C%20hospital%20beds%2C%20and%20various%20medical%20equipment.%20The%20room%20should%20be%20well-lit%2C%20clean%2C%20and%20organized%2C%20showing%20a%20professional%20healthcare%20training%20environment%20with%20students%20practicing%20clinical%20skills&width=400&height=300&seq=8&orientation=landscape" alt="Skills Laboratory" class="w-full h-full object-cover object-top transition-transform duration-500">
+</div>
+<div class="p-5">
+<h3 class="text-lg font-semibold text-gray-900 mb-2">Skills Laboratory</h3>
+<p class="text-gray-700 text-sm">Our well-equipped skills laboratory provides students with hands-on experience using medical mannequins and equipment to practice clinical procedures in a controlled environment.</p>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">Medical Mannequins</span>
+<span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">Hospital Beds</span>
+<span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">Clinical Equipment</span>
+</div>
+</div>
+</div>
+<!-- Computer Laboratory -->
+<div class="bg-white rounded-lg shadow-sm overflow-hidden facility-card transition-all duration-300">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20modern%20computer%20laboratory%20in%20a%20nursing%20school%20with%20rows%20of%20desktop%20computers%2C%20students%20working%20at%20workstations%2C%20and%20a%20clean%2C%20well-organized%20environment.%20The%20room%20should%20be%20well-lit%20with%20educational%20posters%20on%20the%20walls%20related%20to%20healthcare&width=400&height=300&seq=9&orientation=landscape" alt="Computer Laboratory" class="w-full h-full object-cover object-top transition-transform duration-500">
+</div>
+<div class="p-5">
+<h3 class="text-lg font-semibold text-gray-900 mb-2">Computer Laboratory</h3>
+<p class="text-gray-700 text-sm">Our computer laboratory is equipped with modern computers and healthcare software to enhance digital literacy and provide access to online learning resources.</p>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">Modern Computers</span>
+<span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">Internet Access</span>
+<span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">Healthcare Software</span>
+</div>
+</div>
+</div>
+<!-- Library -->
+<div class="bg-white rounded-lg shadow-sm overflow-hidden facility-card transition-all duration-300">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20well-stocked%20nursing%20school%20library%20with%20bookshelves%20full%20of%20medical%20textbooks%2C%20study%20tables%20with%20students%20reading%2C%20and%20a%20quiet%2C%20academic%20atmosphere.%20The%20library%20should%20look%20organized%20with%20good%20lighting%20and%20a%20professional%20environment&width=400&height=300&seq=10&orientation=landscape" alt="Library" class="w-full h-full object-cover object-top transition-transform duration-500">
+</div>
+<div class="p-5">
+<h3 class="text-lg font-semibold text-gray-900 mb-2">Library</h3>
+<p class="text-gray-700 text-sm">Our library houses a comprehensive collection of medical textbooks, journals, and reference materials to support research and academic excellence.</p>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">Medical Textbooks</span>
+<span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">Study Areas</span>
+<span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">Digital Resources</span>
+</div>
+</div>
+</div>
+<!-- Classrooms -->
+<div class="bg-white rounded-lg shadow-sm overflow-hidden facility-card transition-all duration-300">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20modern%20nursing%20school%20classroom%20with%20rows%20of%20desks%2C%20a%20whiteboard%2Fprojector%2C%20and%20students%20engaged%20in%20learning.%20The%20room%20should%20be%20well-lit%2C%20clean%2C%20and%20organized%20with%20educational%20posters%20related%20to%20healthcare%20on%20the%20walls&width=400&height=300&seq=11&orientation=landscape" alt="Classrooms" class="w-full h-full object-cover object-top transition-transform duration-500">
+</div>
+<div class="p-5">
+<h3 class="text-lg font-semibold text-gray-900 mb-2">Classrooms</h3>
+<p class="text-gray-700 text-sm">Our spacious, well-ventilated classrooms are equipped with modern teaching aids to facilitate effective learning and student engagement.</p>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">Projectors</span>
+<span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">Whiteboards</span>
+<span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">Comfortable Seating</span>
+</div>
+</div>
+</div>
+<!-- Hostels -->
+<div class="bg-white rounded-lg shadow-sm overflow-hidden facility-card transition-all duration-300">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20clean%20and%20comfortable%20student%20hostel%20building%20for%20a%20nursing%20school%20in%20Uganda%2C%20with%20well-maintained%20exteriors%20and%20some%20students%20visible%20near%20the%20entrance.%20The%20building%20should%20look%20safe%20and%20welcoming%20with%20good%20lighting&width=400&height=300&seq=12&orientation=landscape" alt="Hostels" class="w-full h-full object-cover object-top transition-transform duration-500">
+</div>
+<div class="p-5">
+<h3 class="text-lg font-semibold text-gray-900 mb-2">Student Hostels</h3>
+<p class="text-gray-700 text-sm">We provide separate, secure, and comfortable accommodation facilities for male and female students with essential amenities for a conducive living environment.</p>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">Separate Male/Female Wings</span>
+<span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">24/7 Security</span>
+<span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">Common Areas</span>
+</div>
+</div>
+</div>
+<!-- Campus Grounds -->
+<div class="bg-white rounded-lg shadow-sm overflow-hidden facility-card transition-all duration-300">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20beautiful%20nursing%20school%20campus%20in%20Uganda%20with%20green%20spaces%2C%20walkways%2C%20and%20students%20relaxing%20or%20walking%20between%20buildings.%20The%20grounds%20should%20look%20well-maintained%20with%20trees%20and%20a%20peaceful%20academic%20environment&width=400&height=300&seq=13&orientation=landscape" alt="Campus Grounds" class="w-full h-full object-cover object-top transition-transform duration-500">
+</div>
+<div class="p-5">
+<h3 class="text-lg font-semibold text-gray-900 mb-2">Campus Grounds</h3>
+<p class="text-gray-700 text-sm">Our spacious campus provides a serene environment with green spaces, recreational areas, and well-maintained pathways for a balanced student life.</p>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">Green Spaces</span>
+<span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">Recreational Areas</span>
+<span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">Study Areas</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Academic Excellence Section -->
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">Academic Excellence</h2>
+<p class="text-gray-700 max-w-2xl mx-auto">Our commitment to academic excellence is reflected in our experienced faculty, quality education, and student achievements.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Experienced Tutors -->
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+<i class="ri-user-star-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Experienced Tutors</h3>
+<p class="text-gray-700">Our faculty consists of highly qualified healthcare professionals with extensive clinical and teaching experience, dedicated to nurturing the next generation of healthcare providers.</p>
+<div class="mt-4">
+<div class="flex items-center mb-2">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-checkbox-circle-line text-primary"></i>
+</div>
+<span class="ml-2 text-gray-700">15+ Qualified Instructors</span>
+</div>
+<div class="flex items-center mb-2">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-checkbox-circle-line text-primary"></i>
+</div>
+<span class="ml-2 text-gray-700">Clinical Specialists</span>
+</div>
+<div class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-checkbox-circle-line text-primary"></i>
+</div>
+<span class="ml-2 text-gray-700">Continuous Professional Development</span>
+</div>
+</div>
+</div>
+<!-- Partnerships -->
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+<i class="ri-building-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Partnerships & Affiliations</h3>
+<p class="text-gray-700">We collaborate with healthcare facilities and organizations to provide students with diverse clinical experiences and enhance their practical skills.</p>
+<div class="mt-4">
+<div class="flex items-center mb-2">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-checkbox-circle-line text-primary"></i>
+</div>
+<span class="ml-2 text-gray-700">Local Hospital Affiliations</span>
+</div>
+<div class="flex items-center mb-2">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-checkbox-circle-line text-primary"></i>
+</div>
+<span class="ml-2 text-gray-700">Community Health Centers</span>
+</div>
+<div class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-checkbox-circle-line text-primary"></i>
+</div>
+<span class="ml-2 text-gray-700">Healthcare NGOs</span>
+</div>
+</div>
+</div>
+<!-- Student Success -->
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+<i class="ri-award-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Student Success</h3>
+<p class="text-gray-700">Our graduates have achieved remarkable success in their careers, with many securing positions in reputable healthcare institutions across Uganda and beyond.</p>
+<div class="mt-4">
+<div class="flex items-center mb-2">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-checkbox-circle-line text-primary"></i>
+</div>
+<span class="ml-2 text-gray-700">95% Employment Rate</span>
+</div>
+<div class="flex items-center mb-2">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-checkbox-circle-line text-primary"></i>
+</div>
+<span class="ml-2 text-gray-700">High UHPAB Exam Pass Rate</span>
+</div>
+<div class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-checkbox-circle-line text-primary"></i>
+</div>
+<span class="ml-2 text-gray-700">Alumni Network Support</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Testimonials -->
+<div class="mt-16">
+<h3 class="text-2xl font-bold text-gray-900 text-center mb-8">What Our Students Say</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Testimonial 1 -->
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<div class="flex text-yellow-400 mb-4">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+<p class="text-gray-700 italic mb-4">"The practical training I received at BSNM prepared me exceptionally well for my nursing career. The tutors are knowledgeable and truly care about student success."</p>
+<div class="flex items-center">
+<img src="https://readdy.ai/api/search-image?query=Professional%20headshot%20portrait%20of%20a%20young%20African%20female%20nurse%20in%20uniform%2C%20looking%20confident%20and%20smiling%2C%20with%20a%20clean%20white%20background&width=100&height=100&seq=14&orientation=squarish" alt="Student" class="w-12 h-12 rounded-full object-cover object-top">
+<div class="ml-3">
+<h4 class="font-semibold text-gray-900">Grace Namukasa</h4>
+<p class="text-sm text-gray-600">Nursing Graduate, 2022</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<div class="flex text-yellow-400 mb-4">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+<p class="text-gray-700 italic mb-4">"The midwifery program at BSNM gave me both confidence and competence. The skills lab and clinical rotations provided invaluable hands-on experience that I use daily in my work."</p>
+<div class="flex items-center">
+<img src="https://readdy.ai/api/search-image?query=Professional%20headshot%20portrait%20of%20a%20young%20African%20female%20healthcare%20worker%20in%20uniform%2C%20looking%20confident%20and%20smiling%2C%20with%20a%20clean%20white%20background&width=100&height=100&seq=15&orientation=squarish" alt="Student" class="w-12 h-12 rounded-full object-cover object-top">
+<div class="ml-3">
+<h4 class="font-semibold text-gray-900">Sarah Akello</h4>
+<p class="text-sm text-gray-600">Midwifery Graduate, 2021</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<div class="flex text-yellow-400 mb-4">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-half-fill"></i>
+</div>
+<p class="text-gray-700 italic mb-4">"BSNM provided me with a supportive learning environment and excellent facilities. The experienced tutors and practical approach to learning have been instrumental in my professional development."</p>
+<div class="flex items-center">
+<img src="https://readdy.ai/api/search-image?query=Professional%20headshot%20portrait%20of%20a%20young%20African%20male%20nurse%20in%20uniform%2C%20looking%20confident%20and%20smiling%2C%20with%20a%20clean%20white%20background&width=100&height=100&seq=16&orientation=squarish" alt="Student" class="w-12 h-12 rounded-full object-cover object-top">
+<div class="ml-3">
+<h4 class="font-semibold text-gray-900">David Okello</h4>
+<p class="text-sm text-gray-600">Nursing Graduate, 2023</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Campus Life Section -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">Campus Life</h2>
+<p class="text-gray-700 max-w-2xl mx-auto">Experience a vibrant and supportive community at Bweyale School of Nursing and Midwifery, where academic excellence meets a balanced student life.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<div class="grid grid-cols-2 gap-4 mb-4">
+<img src="https://readdy.ai/api/search-image?query=African%20nursing%20students%20in%20uniform%20studying%20together%20in%20a%20library%20or%20classroom%2C%20collaborating%20on%20assignments%20with%20textbooks%20and%20notes%20visible&width=300&height=200&seq=17&orientation=landscape" alt="Student Activities" class="w-full h-40 object-cover object-top rounded-lg">
+<img src="https://readdy.ai/api/search-image?query=African%20nursing%20students%20participating%20in%20a%20community%20health%20outreach%20program%2C%20interacting%20with%20local%20community%20members%2C%20wearing%20nursing%20uniforms&width=300&height=200&seq=18&orientation=landscape" alt="Community Outreach" class="w-full h-40 object-cover object-top rounded-lg">
+</div>
+<img src="https://readdy.ai/api/search-image?query=A%20group%20of%20diverse%20African%20nursing%20and%20midwifery%20students%20in%20uniform%20gathered%20outside%20a%20modern%20school%20building%2C%20smiling%20and%20interacting%20in%20a%20friendly%20manner&width=600&height=300&seq=19&orientation=landscape" alt="Campus Environment" class="w-full h-64 object-cover object-top rounded-lg">
+</div>
+<div>
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Student Experience</h3>
+<p class="text-gray-700 mb-6">At BSNM, we believe in nurturing well-rounded healthcare professionals through a balanced approach to education and campus life. Our supportive community fosters personal growth, leadership skills, and lifelong friendships.</p>
+<div class="space-y-4 mb-6">
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+<i class="ri-community-line text-primary"></i>
+</div>
+<div class="ml-4">
+<h4 class="font-semibold text-gray-900">Student Organizations</h4>
+<p class="text-gray-700 text-sm">Join various student clubs focused on professional development, community service, and recreational activities.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+<i class="ri-heart-pulse-line text-primary"></i>
+</div>
+<div class="ml-4">
+<h4 class="font-semibold text-gray-900">Health & Wellness</h4>
+<p class="text-gray-700 text-sm">Access to healthcare services, counseling support, and recreational facilities to maintain physical and mental well-being.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+<i class="ri-restaurant-line text-primary"></i>
+</div>
+<div class="ml-4">
+<h4 class="font-semibold text-gray-900">Dining Services</h4>
+<p class="text-gray-700 text-sm">Nutritious meals prepared in our clean and modern kitchen facilities, catering to various dietary needs.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+<i class="ri-home-4-line text-primary"></i>
+</div>
+<div class="ml-4">
+<h4 class="font-semibold text-gray-900">Accommodation</h4>
+<p class="text-gray-700 text-sm">Comfortable and secure hostel facilities with essential amenities for a conducive living and learning environment.</p>
+</div>
+</div>
+</div>
+<a href="#" class="inline-flex items-center text-primary font-medium hover:underline">
+Learn more about campus life
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Admissions Section -->
+<section id="admissions" class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">Admissions</h2>
+<p class="text-gray-700 max-w-2xl mx-auto">Take the first step towards a rewarding healthcare career by applying to our nursing and midwifery programs.</p>
+</div>
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="md:flex">
+<div class="md:w-1/2 p-8">
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Admission Requirements</h3>
+<div class="mb-6">
+<h4 class="font-medium text-gray-900 mb-2">Academic Requirements:</h4>
+<ul class="space-y-2">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5">
+<i class="ri-checkbox-circle-line text-primary"></i>
+</div>
+<span class="ml-2 text-gray-700">Uganda Certificate of Education (UCE) with at least 5 passes</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5">
+<i class="ri-checkbox-circle-line text-primary"></i>
+</div>
+<span class="ml-2 text-gray-700">Credits in Biology, Chemistry, and English</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5">
+<i class="ri-checkbox-circle-line text-primary"></i>
+</div>
+<span class="ml-2 text-gray-700">Pass in Mathematics and Physics</span>
+</li>
+</ul>
+</div>
+<div class="mb-6">
+<h4 class="font-medium text-gray-900 mb-2">Required Documents:</h4>
+<ul class="space-y-2">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5">
+<i class="ri-file-list-3-line text-primary"></i>
+</div>
+<span class="ml-2 text-gray-700">Completed application form</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5">
+<i class="ri-file-list-3-line text-primary"></i>
+</div>
+<span class="ml-2 text-gray-700">Certified copies of academic certificates</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5">
+<i class="ri-file-list-3-line text-primary"></i>
+</div>
+<span class="ml-2 text-gray-700">Copy of National ID or passport</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5">
+<i class="ri-file-list-3-line text-primary"></i>
+</div>
+<span class="ml-2 text-gray-700">Recent passport-sized photographs</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5">
+<i class="ri-file-list-3-line text-primary"></i>
+</div>
+<span class="ml-2 text-gray-700">Medical fitness certificate</span>
+</li>
+</ul>
+</div>
+<div>
+<h4 class="font-medium text-gray-900 mb-2">Application Deadlines:</h4>
+<div class="flex items-center mb-2">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-calendar-line text-primary"></i>
+</div>
+<span class="ml-2 text-gray-700">January Intake: October 30, 2025</span>
+</div>
+<div class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-calendar-line text-primary"></i>
+</div>
+<span class="ml-2 text-gray-700">August Intake: May 30, 2025</span>
+</div>
+</div>
+</div>
+<div class="md:w-1/2 bg-gray-50 p-8">
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Application Process</h3>
+<div class="space-y-6">
+<div class="flex">
+<div class="flex-shrink-0">
+<div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-semibold">1</div>
+</div>
+<div class="ml-4">
+<h4 class="font-medium text-gray-900">Obtain Application Form</h4>
+<p class="text-gray-700 text-sm">Download the application form from our website or collect it from our admissions office.</p>
+</div>
+</div>
+<div class="flex">
+<div class="flex-shrink-0">
+<div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-semibold">2</div>
+</div>
+<div class="ml-4">
+<h4 class="font-medium text-gray-900">Submit Required Documents</h4>
+<p class="text-gray-700 text-sm">Complete the application form and submit it along with all required documents.</p>
+</div>
+</div>
+<div class="flex">
+<div class="flex-shrink-0">
+<div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-semibold">3</div>
+</div>
+<div class="ml-4">
+<h4 class="font-medium text-gray-900">Pay Application Fee</h4>
+<p class="text-gray-700 text-sm">Pay the non-refundable application fee of UGX 50,000 via mobile money or bank deposit.</p>
+</div>
+</div>
+<div class="flex">
+<div class="flex-shrink-0">
+<div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-semibold">4</div>
+</div>
+<div class="ml-4">
+<h4 class="font-medium text-gray-900">Attend Interview</h4>
+<p class="text-gray-700 text-sm">Shortlisted candidates will be invited for an interview and aptitude assessment.</p>
+</div>
+</div>
+<div class="flex">
+<div class="flex-shrink-0">
+<div class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-semibold">5</div>
+</div>
+<div class="ml-4">
+<h4 class="font-medium text-gray-900">Admission Decision</h4>
+<p class="text-gray-700 text-sm">Successful candidates will receive admission letters with registration instructions.</p>
+</div>
+</div>
+</div>
+<div class="mt-8">
+<a href="#" class="bg-primary text-white px-6 py-3 !rounded-button hover:bg-primary/90 transition whitespace-nowrap">Download Application Form</a>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-12 text-center">
+<p class="text-gray-700 mb-4">For more information about the admission process, please contact our admissions office.</p>
+<a href="#contact" class="inline-flex items-center text-primary font-medium hover:underline">
+Contact Admissions Office
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+</div>
+</section>
+<!-- Contact & Location Section -->
+<section id="contact" class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">Contact Us</h2>
+<p class="text-gray-700 max-w-2xl mx-auto">We're here to answer your questions and provide information about our programs and admission process.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<div>
+<div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Get in Touch</h3>
+<form>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+<div>
+<label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+<input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary" placeholder="Your name">
+</div>
+<div>
+<label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+<input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary" placeholder="Your email">
+</div>
+</div>
+<div class="mb-4">
+<label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+<input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary" placeholder="Your phone number">
+</div>
+<div class="mb-4">
+<label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+<select id="subject" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary pr-8">
+<option value="">Select a subject</option>
+<option value="admission">Admission Inquiry</option>
+<option value="program">Program Information</option>
+<option value="fees">Tuition & Fees</option>
+<option value="accommodation">Accommodation</option>
+<option value="other">Other</option>
+</select>
+</div>
+<div class="mb-4">
+<label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+<textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary" placeholder="Your message"></textarea>
+</div>
+<label class="custom-checkbox mb-4 block">
+<input type="checkbox">
+<span class="checkmark"></span>
+<span class="text-sm text-gray-700">I agree to the processing of my personal data in accordance with the privacy policy</span>
+</label>
+<button type="submit" class="bg-primary text-white px-6 py-3 !rounded-button hover:bg-primary/90 transition whitespace-nowrap">Send Message</button>
+</form>
+</div>
+</div>
+<div>
+<div class="bg-white rounded-lg shadow-sm overflow-hidden mb-8">
+<div class="h-64 bg-gray-200">
+<img src="https://public.readdy.ai/gen_page/map_placeholder_1280x720.png" alt="Location Map" class="w-full h-full object-cover">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Our Location</h3>
+<div class="space-y-4">
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+<i class="ri-map-pin-line text-primary"></i>
+</div>
+<div class="ml-4">
+<h4 class="font-semibold text-gray-900">Address</h4>
+<p class="text-gray-700">Bweyale Town Council, Along Gulu-Kampala Highway, Kiryandongo District, Uganda</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<div class="ml-4">
+<h4 class="font-semibold text-gray-900">Phone</h4>
+<p class="text-gray-700">+256 782 456 789</p>
+<p class="text-gray-700">+256 712 345 678</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+<i class="ri-mail-line text-primary"></i>
+</div>
+<div class="ml-4">
+<h4 class="font-semibold text-gray-900">Email</h4>
+<p class="text-gray-700">info@bsnm.ac.ug</p>
+<p class="text-gray-700">admissions@bsnm.ac.ug</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+<i class="ri-time-line text-primary"></i>
+</div>
+<div class="ml-4">
+<h4 class="font-semibold text-gray-900">Office Hours</h4>
+<p class="text-gray-700">Monday - Friday: 8:00 AM - 5:00 PM</p>
+<p class="text-gray-700">Saturday: 9:00 AM - 1:00 PM</p>
+<p class="text-gray-700">Sunday: Closed</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<div>
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 mr-3">
+<img src="https://static.readdy.ai/image/5b482ff326b89d7903505022f67bfc1e/42946f920724f527c6d857cfcdb03e0f.png" alt="BSNM Logo" class="w-full h-full object-contain">
+</div>
+<div>
+<h3 class="font-semibold">Bweyale School of</h3>
+<p class="text-sm text-gray-400">Nursing and Midwifery</p>
+</div>
+</div>
+<p class="text-gray-400 mb-4">Providing quality healthcare education to shape the future of medical professionals in Uganda since 2015.</p>
+<div class="flex space-x-3">
+<a href="#" class="w-8 h-8 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-8 h-8 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition">
+<i class="ri-twitter-fill"></i>
+</a>
+<a href="#" class="w-8 h-8 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="w-8 h-8 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition">
+<i class="ri-youtube-fill"></i>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-400 hover:text-white transition">Home</a></li>
+<li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
+<li><a href="#programs" class="text-gray-400 hover:text-white transition">Programs</a></li>
+<li><a href="#facilities" class="text-gray-400 hover:text-white transition">Facilities</a></li>
+<li><a href="./admission.html" class="text-gray-400 hover:text-white transition">Admissions</a></li>
+<li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Programs</h3>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-400 hover:text-white transition">Certificate in Nursing</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition">Certificate in Midwifery</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition">Short Courses</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition">Continuing Education</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Contact Information</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5">
+<i class="ri-map-pin-line text-primary"></i>
+</div>
+<span class="ml-2 text-gray-400">Bweyale Town Council, Along Gulu-Kampala Highway, Kiryandongo District, Uganda</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<span class="ml-2 text-gray-400">+256 782 456 789</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-mail-line text-primary"></i>
+</div>
+<span class="ml-2 text-gray-400">info@bsnm.ac.ug</span>
+</li>
+</ul>
+</div>
+</div>
+<hr class="border-gray-800 mb-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2025 Bweyale School of Nursing and Midwifery. All rights reserved.</p>
+<div class="flex space-x-4 text-sm text-gray-400">
+<a href="#" class="hover:text-white transition">Privacy Policy</a>
+<a href="#" class="hover:text-white transition">Terms of Service</a>
+<a href="#" class="hover:text-white transition">Sitemap</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Mobile menu toggle
+const menuButton = document.querySelector('.ri-menu-line').parentElement;
+const mobileMenu = document.createElement('div');
+mobileMenu.className = 'lg:hidden fixed inset-0 bg-gray-900 bg-opacity-50 z-50 hidden';
+mobileMenu.innerHTML = `
+<div class="bg-white h-full w-64 p-6 transform transition-transform">
+<div class="flex justify-between items-center mb-6">
+<div class="flex items-center">
+<div class="w-10 h-10 mr-2">
+<img src="https://static.readdy.ai/image/5b482ff326b89d7903505022f67bfc1e/42946f920724f527c6d857cfcdb03e0f.png" alt="BSNM Logo" class="w-full h-full object-contain">
+</div>
+<span class="text-sm font-semibold">Bweyale School</span>
+</div>
+<button class="text-gray-700 focus:outline-none close-menu">
+<i class="ri-close-line text-2xl"></i>
+</button>
+</div>
+<nav class="flex flex-col space-y-4">
+<a href="#" class="text-primary font-medium">Home</a>
+<a href="#about" class="text-gray-700 hover:text-primary transition">About Us</a>
+<a href="#programs" class="text-gray-700 hover:text-primary transition">Programs</a>
+<a href="#facilities" class="text-gray-700 hover:text-primary transition">Facilities</a>
+<a href="#admissions" class="text-gray-700 hover:text-primary transition">Admissions</a>
+<a href="#contact" class="text-gray-700 hover:text-primary transition">Contact</a>
+<a href="https://readdy.ai/home/9e5d58d9-03cb-44f5-9a57-22124a5a3040/5874f331-9fd6-4ab6-9d89-74e30bf35f8e" data-readdy="true" class="bg-primary text-white px-4 py-2 !rounded-button hover:bg-primary/90 transition text-center mt-4">Apply Now</a>
+</nav>
+</div>
+`;
+document.body.appendChild(mobileMenu);
+menuButton.addEventListener('click', function() {
+mobileMenu.classList.remove('hidden');
+mobileMenu.querySelector('div').classList.add('translate-x-0');
+mobileMenu.querySelector('div').classList.remove('-translate-x-full');
+document.body.classList.add('overflow-hidden');
+});
+mobileMenu.querySelector('.close-menu').addEventListener('click', function() {
+mobileMenu.querySelector('div').classList.remove('translate-x-0');
+mobileMenu.querySelector('div').classList.add('-translate-x-full');
+setTimeout(() => {
+mobileMenu.classList.add('hidden');
+document.body.classList.remove('overflow-hidden');
+}, 300);
+});
+// Close mobile menu when clicking on a link
+mobileMenu.querySelectorAll('a').forEach(link => {
+link.addEventListener('click', function() {
+mobileMenu.querySelector('div').classList.remove('translate-x-0');
+mobileMenu.querySelector('div').classList.add('-translate-x-full');
+setTimeout(() => {
+mobileMenu.classList.add('hidden');
+document.body.classList.remove('overflow-hidden');
+}, 300);
+});
+});
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+if (this.getAttribute('href') !== '#') {
+e.preventDefault();
+const target = document.querySelector(this.getAttribute('href'));
+if (target) {
+window.scrollTo({
+top: target.offsetTop - 80,
+behavior: 'smooth'
+});
+}
+}
+});
+});
+});
+</script>
+</body>
+</html>
